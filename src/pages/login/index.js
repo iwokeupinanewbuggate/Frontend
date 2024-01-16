@@ -1,5 +1,5 @@
 import { useState } from "react"
-import img from '../../../public/darko.jpeg'
+import img from '../../../public/Darko.jpeg'
 import Router, { useRouter } from "next/router"
 
 
