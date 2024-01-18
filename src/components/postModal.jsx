@@ -9,11 +9,12 @@ import "react-toastify/dist/ReactToastify.css";
 const style = {
   position: "absolute",
   top: "30%",
-  left: "27.7%",
+  left: "27%",
+  right: "27%",
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
-  width: "1000px",
+  width: "50vw",
   height: "30vh",
   border: "none",
   backgroundColor: "#2e2e2d",
@@ -107,7 +108,7 @@ export default function BasicModal({ myFacts, setMyFacts }) {
                 style={{
                   padding: "30px",
                   backgroundColor: "#2e2e2d",
-                  width: "500px",
+                  width: "40vw",
                   border: "none",
                 }}
               />
@@ -119,7 +120,7 @@ export default function BasicModal({ myFacts, setMyFacts }) {
                 style={{
                   padding: "30px",
                   backgroundColor: "#2e2e2d",
-                  width: "500px",
+                  width: "40vw",
                   border: "none",
                 }}
               />
