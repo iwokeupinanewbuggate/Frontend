@@ -12,7 +12,7 @@ import "react-toastify/dist/ReactToastify.css";
 const Home = () => {
   const [facts, setfacts] = useState([])
   const [loading, setloading] = useState(false)
-  const [previewImage, setPreviewImage] = useState(null)
+
 
   const getData = async () => {
 
@@ -34,6 +34,7 @@ const Home = () => {
     setTimeout(() => {
       setloading(false)
     }, 100);
+
   }, [])
 
 
@@ -83,7 +84,7 @@ const Home = () => {
       {loading && <div style={{ display: "flex", justifyContent: "center", alignItems: "center", width: "100vw", height: "100vh", fontFamily: "sans-serif" }}> Loading . . . </div>}
       {!loading && facts.length > 0 && <div style={gradientStyle}>
         <div style={{ display: "flex", height: "10vh", width: "100vw", backgroundColor: "rgba(92, 93, 94,0.5)", position: "fixed", top: "0", justifyContent: "space-evenly", alignItems: "center", zIndex: "1" }}>
-          <button onClick={id} style={{ padding: "10px", borderRadius: "10px", border: "none" }}>My facts</button> <img src={previewImage} style={{ width: '70px', height: "70px", border: "5px #545454 solid", borderRadius: "50%" }} onClick={user} />   <button onClick={logout} style={{ padding: "10px", borderRadius: "10px", border: "none" }}>logout</button>
+          <button onClick={id} style={{ padding: "10px", borderRadius: "10px", border: "none" }}>My facts</button> <img src={localStorage.getItem("imageUrl")} style={{ width: '70px', height: "70px", border: "5px #545454 solid", borderRadius: "50%" }} onClick={user} />   <button onClick={logout} style={{ padding: "10px", borderRadius: "10px", border: "none" }}>logout</button>
         </div>
         {/* <button onClick={id}>33</button> */}
         <div style={{ position: "relative", top: "10vh", overflow: "scroll" }}>
