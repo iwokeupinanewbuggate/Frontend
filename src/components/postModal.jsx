@@ -100,7 +100,7 @@ export default function BasicModal({ myFacts, setMyFacts }) {
             <div
               style={{ display: "flex", flexDirection: "column", gap: "40px" }}
             >
-              <input
+              <textarea
                 placeholder="Title"
                 value={titleText}
                 onChange={handleTitle}
@@ -111,7 +111,8 @@ export default function BasicModal({ myFacts, setMyFacts }) {
                   border: "none",
                 }}
               />
-              <input
+
+              <textarea
                 placeholder="Fact"
                 value={fact}
                 onChange={handleFacts}

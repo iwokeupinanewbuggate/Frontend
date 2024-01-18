@@ -106,7 +106,7 @@ export default function Edit({ myFacts, setMyFacts, factId, fact, title }) {
             <div
               style={{ display: "flex", flexDirection: "column", gap: "40px" }}
             >
-              <input
+              <textarea
                 placeholder="Title"
                 value={titleText}
                 onChange={handleTitle}
@@ -117,7 +117,7 @@ export default function Edit({ myFacts, setMyFacts, factId, fact, title }) {
                   border: "none",
                 }}
               />
-              <input
+              <textarea
                 placeholder="Fact"
                 value={factText}
                 onChange={handleFact}
@@ -127,6 +127,7 @@ export default function Edit({ myFacts, setMyFacts, factId, fact, title }) {
                   border: "none",
                 }}
               />
+
               <div
                 style={{
                   display: "flex",

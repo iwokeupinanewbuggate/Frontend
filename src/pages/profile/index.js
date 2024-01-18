@@ -230,7 +230,8 @@ const Profile = () => {
                 <input value={Age} onChange={handleAge} />
                 <h2 style={{ fontFamily: "sans-serif" }}>About</h2>
                 <div style={{ backgroundColor: "#1f1f1f", width: "50vw", height: "30vh", borderRadius: "20px", display: "flex", justifyContent: "center", alignItems: "center" }}>
-                    <input value={aboutMe} onChange={handleAboutme} style={{ width: "45vw", height: "25vh", backgroundColor: "#1f1f1f", border: "none", padding: "10px" }} placeholder="About me" />
+
+                    <textarea value={aboutMe} onChange={handleAboutme} style={{ width: "45vw", height: "25vh", backgroundColor: "#1f1f1f", border: "none", padding: "20px" }} placeholder="About me" />
                 </div>
             </div>
             {pfpuptade && (
