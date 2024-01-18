@@ -1,7 +1,7 @@
 import axios from "axios"
 import Router from "next/router"
 import { use, useEffect, useState } from "react"
-import { ToastContainer, toast } from "react-toastify";
+import Modal from "../../components/modal";
 
 
 const defaultProfilePic = "pfp.png";
@@ -15,6 +15,14 @@ const Profile = () => {
     const [aboutMe, setaboutMe] = useState("")
     const [userName, setuserName] = useState("")
     const [Age, setAge] = useState()
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+
+
+    const closeModal = () => {
+        setIsModalOpen(false);
+    };
+
     const goBack = () => {
         Router.push("/")
     }
@@ -52,15 +60,15 @@ const Profile = () => {
                 age: Age
             }).then((res) => {
                 console.log(res)
-                toast.success("Successfully saved", {
-                    position: "top-left",
-                    autoClose: 2000,
-                    draggable: false,
-                    hideProgressBar: true,
-                    pauseOnHover: false,
-                    closeOnClick: false,
-                    theme: "dark",
-                });
+                // toast.success("Successfully saved", {
+                //     position: "top-left",
+                //     autoClose: 2000,
+                //     draggable: false,
+                //     hideProgressBar: true,
+                //     pauseOnHover: false,
+                //     closeOnClick: false,
+                //     theme: "dark",
+                // });
                 window.location.reload()
                 if (res.data.imageUrl === "") {
 
@@ -105,10 +113,11 @@ const Profile = () => {
 
     const uptadeed = () => {
         setpfpuptade(true);
-
+        setIsModalOpen(true);
     };
     const done = () => {
         setpfpuptade(false);
+        setIsModalOpen(false);
     };
     const handleAboutme = event => {
         setaboutMe(event.target.value)
@@ -124,7 +133,9 @@ const Profile = () => {
 
 
     return (<div style={{ width: "100vw", height: "100vh", background: 'linear-gradient(to top, black, #363534)', }}>
+
         {!isUptadingProfile &&
+
             <div>
                 <div style={{ display: "flex", height: "5vh", width: "100vw", backgroundColor: "#363534", justifyContent: "space-evenly" }}> <button onClick={goBack}>Go Back</button> <button onClick={uptade}>Edit profile</button>
 
@@ -148,7 +159,7 @@ const Profile = () => {
                     <p style={{ fontFamily: "sans-serif" }}>  {profile.username}</p>
                     <p style={{ fontFamily: "sans-serif" }}> {profile.age}</p>
                     <h2 style={{ fontFamily: "sans-serif" }}>About</h2>
-                    <div style={{ backgroundColor: "#1f1f1f", width: "50vw", height: "30vh", borderRadius: "20px", fontFamily: "sans-serif", padding: "10px" }}>
+                    <div style={{ backgroundColor: "#1f1f1f", width: "50vw", height: "30vh", borderRadius: "20px", fontFamily: "sans-serif", padding: "30px" }}>
                         <p >{profile.aboutMe}</p>
                     </div>
 
@@ -187,6 +198,8 @@ const Profile = () => {
                     gap: "30px",
                 }}
             >
+                <Modal isOpen={isModalOpen} onClose={closeModal} handleSubmit={handleSubmit} handleImageChange={handleImageChange} done={done}></Modal>
+
                 {previewImage ? (
                     <img
                         src={previewImage}
@@ -225,25 +238,12 @@ const Profile = () => {
                     style={{ position: "relative", backgroundColor: "rgba(10,10,10,0.1)" }}
 
                 >
-                    <form onSubmit={handleSubmit}>
-                        <label>
-                            Profile Picture:
-                            <input
-                                type="file"
-                                onChange={handleImageChange}
-                                accept="image/*"
-                            />
-                        </label>
 
-                        <br />
-                        <button type="submit" onClick={done}>
-                            Update Profile Picture
-                        </button>
-                    </form>
                 </div>
             )}
             <p> </p>
         </div>}
+
     </div >)
 
 
