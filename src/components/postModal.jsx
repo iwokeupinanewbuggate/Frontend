@@ -9,8 +9,8 @@ import "react-toastify/dist/ReactToastify.css";
 const style = {
   position: "absolute",
   top: "30%",
-  left: "27%",
-  right: "27%",
+  left: "25vw",
+  right: "25vw",
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
