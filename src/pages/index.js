@@ -79,7 +79,7 @@ const Home = () => {
   };
 
   return (
-    <div >
+    <div style={{ overflow: "hidden" }} >
       {loading && <div style={{ display: "flex", justifyContent: "center", alignItems: "center", width: "100vw", height: "100vh", fontFamily: "sans-serif" }}> Loading . . . </div>}
       {!loading && facts.length > 0 && <div style={gradientStyle}>
         <div style={{ display: "flex", height: "10vh", width: "100vw", backgroundColor: "rgba(92, 93, 94,0.5)", position: "fixed", top: "0", justifyContent: "space-evenly", alignItems: "center", zIndex: "1" }}>
