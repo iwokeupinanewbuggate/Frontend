@@ -58,11 +58,11 @@ const Login = () => {
     }
 
     return <div style={{ display: "flex", justifyContent: "center", alignItems: "center", backgroundImage: `url(${img.src})`, width: '100vw', height: '100vh', fontFamily: "sans-serif" }}>
-        <div style={{ display: "flex", justifyContent: "center", backgroundColor: "grey", width: "500px", height: "400px", borderRadius: "20px" }}>
+        <div style={{ display: "flex", justifyContent: "center", backgroundColor: "grey", width: "40vw", height: "400px", borderRadius: "20px" }}>
             <div style={{ display: "flex", justifyContent: "center", flexDirection: "column", gap: "20px" }}>
-                <input placeholder="Email" style={{ padding: "5px", borderRadius: "7px", border: "none", width: "300px" }} type="text" value={email} onChange={handleEmail} />
+                <input placeholder="Email" style={{ padding: "5px", borderRadius: "7px", border: "none", width: "20vw" }} type="text" value={email} onChange={handleEmail} />
                 <p style={{ color: "#8c2e2e", height: "10px", }}>{emailError}</p>
-                <input placeholder="Password" style={{ padding: "5px", borderRadius: "7px", border: "none", width: "300px" }} type="password" value={pass} onChange={handlePass} />
+                <input placeholder="Password" style={{ padding: "5px", borderRadius: "7px", border: "none", width: "20vw" }} type="password" value={pass} onChange={handlePass} />
                 <p style={{ color: "#8c2e2e", height: "10px", }}>{passError}</p>
                 <button style={{ border: "none", padding: "5px", borderRadius: "7px" }} onClick={() => login(email, pass)} >Login</button>
                 <p style={{ color: "white", fontSize: "12px", }}>Dont have account? create one</p>

@@ -13,7 +13,7 @@ const buttonstyle = {
 }
 const inputstyle = {
     padding: "5px", borderRadius: "7px", border: "none",
-    width: "300px"
+    width: "20vw"
 }
 
 
