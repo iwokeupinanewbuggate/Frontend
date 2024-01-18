@@ -24,7 +24,7 @@ const Home = () => {
       if (res.data.imageUrl) {
         setPfpIMg(res.data.imageUrl)
       } else {
-        setPfpIMg(pfpImg)
+        setPfpIMg(defaultpfp)
       }
     }).catch((err) => {
       console.log(err)
