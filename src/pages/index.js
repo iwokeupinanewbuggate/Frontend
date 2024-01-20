@@ -4,7 +4,6 @@ import { Facts } from "../components/info";
 import axios from "axios";
 import Router from "next/router";
 process.env.DEBUG = 'axios*';
-import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 
@@ -21,6 +20,14 @@ const Home = () => {
         return likeSorted !== 0 ? likeSorted : b.dislike.length - a.dislike.length;
       });
       setfacts(fullySorted)
+
+    }).catch((err) => {
+      console.log(err)
+    })
+
+    const id = localStorage.getItem("userId")
+    const ID = JSON.parse(id)
+    axios.get(`https://localhost:8080/user/${ID}`).then((res) => {
       if (res.data.imageUrl) {
         setPfpIMg(res.data.imageUrl)
       } else {
