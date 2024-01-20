@@ -27,7 +27,7 @@ const Home = () => {
 
     const id = localStorage.getItem("userId")
     const ID = JSON.parse(id)
-    axios.get(`https://localhost:8080/user/${ID}`).then((res) => {
+    axios.get(`https://reddit-backend-xvml.onrender.com/user/${ID}`).then((res) => {
       if (res.data.imageUrl) {
         setPfpIMg(res.data.imageUrl)
       } else {
